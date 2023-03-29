@@ -4,8 +4,9 @@ import { AuthController } from './auth.controller';
 import { UsersModule } from '../users/users.module';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
-import { LocalStrategy } from './gaurds/stratergies/local.stratergy';
-import { JwtStrategy } from './gaurds/stratergies/jwt.stratergy';
+import { LocalStrategy } from './gaurds/stratergies/local.strategy';
+import { JwtStrategy } from './gaurds/stratergies/jwt.strategy';
+import { GoogleStrategy } from './gaurds/stratergies/google.stratergy';
 
 @Module({
   controllers: [AuthController],
@@ -17,6 +18,6 @@ import { JwtStrategy } from './gaurds/stratergies/jwt.stratergy';
       signOptions: { expiresIn: '1d' },
     }),
   ],
-  providers: [AuthService, LocalStrategy, JwtStrategy],
+  providers: [AuthService, LocalStrategy, JwtStrategy, GoogleStrategy],
 })
 export class AuthModule {}

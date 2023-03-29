@@ -17,7 +17,7 @@ export class CreateAuthDto {
     @IsString()
     @IsNotEmpty()
     password: string;
-}
+} 
 
 export class loginDto {
     @IsString()
